@@ -1,4 +1,6 @@
 import { Component, PropsWithChildren } from 'react'
+import "@taroify/icons/index.scss"
+import "@taroify/core/index.scss"
 import './app.css'
 import './app.scss'
 
