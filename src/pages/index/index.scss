@@ -1,0 +1,29 @@
+@import "~taro-ui/dist/style/components/icon.scss";
+.index {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .scrollview {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .save-btm {
+    padding-bottom: constant(safe-area-inset-bottom);
+    /*兼容 IOS<11.2*/
+    padding-bottom: env(safe-area-inset-bottom);
+    /*兼容 IOS>11.2*/
+  }
+
+  .tabBar {
+    box-sizing: border-box;
+    border-top: 1px solid #ccc;
+  }
+
+  .active-bar {
+    color: #056de8;
+    transition: all 0.5s;
+  }
+}

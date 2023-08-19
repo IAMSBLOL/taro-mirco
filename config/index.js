@@ -1,10 +1,15 @@
+import path from "path";
+import fs from 'fs';
+
+const appDirectory = fs.realpathSync(process.cwd());
+const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 const config = {
   projectName: 'mirco',
   date: '2023-8-18',
   designWidth: 750,
-  plugins: [
-    '@tarojs/plugin-html'
-  ],
+  // plugins: [
+  //   '@tarojs/plugin-html'
+  // ],
   designWidth(input) {
     // 配置 NutUI 375 尺寸
     if (input?.file?.replace(/\\+/g, '/').indexOf('@nutui') > -1) {
@@ -21,7 +26,9 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: [],
+  plugins: [
+    'taro-plugin-tailwind'
+  ],
   defineConstants: {
   },
   copy: {
@@ -33,7 +40,10 @@ const config = {
   framework: 'react',
   compiler: 'webpack5',
   cache: {
-    enable: true // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
+    // buildDependencies: {
+    //   config: [resolveApp('config/index.js')],
+    // },
+    enable: false, // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
   },
   mini: {
     postcss: {
