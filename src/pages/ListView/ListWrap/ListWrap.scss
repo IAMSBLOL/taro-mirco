@@ -1,7 +1,23 @@
 .ListWrap {
-
+  
+  background-color: white;
   .ListWrap_Card {
-    background-color: #222;
+ 
     box-shadow: 0 0 4px rgba(0,0,0,.8);
+  }
+
+  .taroify-icon {
+    font-size: 0.7rem;
+  }
+
+  .custom-color {
+    --rate-icon-empty-color: #eee;
+  --rate-icon-full-color: #ffd21e;
+  }
+
+  .top-wrap {
+    right: 0;
+    top: 4px;
+    padding: 2px;
   }
 }

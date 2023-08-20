@@ -48,13 +48,14 @@ function randomlyGeneratedChineseCharacters(num) {
 }
 
  const generateFn=(options)=>{
-  const { deferValue, fieldValue, industryValue, financing } = options
+   const { deferValue, fieldValue, industryValue, financing, areaPickerTitle } = options
   const str= randomlyGeneratedChineseCharacters(3)
   const data={
-    companyName: deferValue  +str,
+    companyName: deferValue ? deferValue + str :  str,
     concepts: fieldValue,
     financing,
-    industryValue
+    industryValue,
+    areaPickerTitle
   }
   
   return data

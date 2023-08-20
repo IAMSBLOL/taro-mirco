@@ -137,7 +137,7 @@ const SearchHeader = (props) => {
       return (
         <View className='senior_wrap'>
           <DropdownMenu className='custom-color text-xs ' value={dropdownMenuValue} onChange={setDropdownMenuValue}>
-            <DropdownMenu.Item title={areaPickerTitle} >
+            <DropdownMenu.Item title={areaPickerTitle || '全国'} >
               <AreaPicker onChange={handleAreaPicker} depth={2} value={areaV} className='text-black'>
                 <AreaPicker.Toolbar>
                   <AreaPicker.Button onClick={handleCanselMenu}>重置</AreaPicker.Button>
@@ -147,7 +147,7 @@ const SearchHeader = (props) => {
                 <AreaPicker.Columns children={areaList} />
               </AreaPicker>
             </DropdownMenu.Item>
-            <DropdownMenu.Item title={fieldValue} >
+            <DropdownMenu.Item title={fieldValue || '概念题材'} >
               {RenderIndustry}
             </DropdownMenu.Item>
             <DropdownMenu.Item title='更多筛选'>

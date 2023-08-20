@@ -17,9 +17,9 @@ const Index = () => {
   const [currentCategory, setCurrentCategory] = useState('company')
   const deferValue = useDeferredValue(value)
 
-  const [fieldValue, setFieldValue] = useState("概念题材")
+  const [fieldValue, setFieldValue] = useState()
 
-  const [areaPickerTitle, setAreaPickerTitle] = useState('地区')
+  const [areaPickerTitle, setAreaPickerTitle] = useState()
 
   const [industryValue, setindustryValue] = useState<string[]>([])
 
@@ -110,7 +110,7 @@ const Index = () => {
           return (
             <ScrollView
 
-              className='scrollview'
+              className='scrollview bg-white'
               scrollY
               scrollWithAnimation
               scrollTop={0}

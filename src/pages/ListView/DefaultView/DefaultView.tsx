@@ -72,7 +72,7 @@ const DefaultView = () => {
 
 
   return (
-    <View className=' bg-slate-200 DefaultView mt-2'>
+    <View className='DefaultView'>
       <Card title='最近搜索'>
         <View className=' flex p-2'>
           <Tag  className='mr-2 p-1'>比亚迪</Tag>

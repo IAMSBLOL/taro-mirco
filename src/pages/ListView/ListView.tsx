@@ -7,18 +7,29 @@ import { getData } from '../config'
 
 const ListView = (props) => {
   const { searchParams } = props
- 
+
   const [dataList, setDataList] = useState<any>([])
   useEffect(() => {
     console.log(searchParams)
-    const _dataList = getData(searchParams, 10)
-    setDataList(_dataList)
+    const {
+      areaPickerTitle,
+      deferValue,
+      fieldValue,
+      financing,
+    } = searchParams
+    if (areaPickerTitle || deferValue || fieldValue || financing) {
+      const _dataList = getData(searchParams, 10)
+      setDataList(_dataList)
+    }else{
+      setDataList([])
+    }
+    
 
   }, [searchParams, setDataList])
 
 
   return (
-    <View className=' pt-1'>
+    <View className=''>
       {
         useMemo(() => {
           if (dataList.length > 0) {
